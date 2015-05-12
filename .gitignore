@@ -1,0 +1,6 @@
+# Ignore compiled files 
+__pycache__/
+*.py[cod]
+
+# Text editor files 
+*.swp 
