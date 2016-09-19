@@ -16,7 +16,7 @@ def get_host(host=None):
         if os.environ.get("PGHOST") is not None:
             h = os.environ.get("PGHOST")
         else:
-            h = 'localhost'
+            h = None
     else:
         h = host
 
@@ -86,7 +86,8 @@ class PsqlWrapper:
 
     def execute_query(self, query, ignore_error=False):
         cmd = "psql -A"
-        cmd = cmd + " -h " + self.host
+        if self.host is not None:
+            cmd = cmd + " -h " + self.host
         cmd = cmd + " -p " + str(self.port)
         cmd = cmd + " -U " + self.username
         cmd = cmd + " -d " + self.dbname
