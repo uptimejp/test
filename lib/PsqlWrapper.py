@@ -67,7 +67,7 @@ class PsqlWrapper:
         self.username = get_username(username)
         self.dbname   = get_dbname(dbname, self.username)
 
-        log.debug("host: " + self.host)
+        log.debug("host: " + str(self.host))
         log.debug("port: " + str(self.port))
         log.debug("user: " + self.username)
         log.debug("dbname: " + self.dbname)
