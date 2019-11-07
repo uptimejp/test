@@ -49,10 +49,10 @@ verify_page(const char *page, BlockNumber blkno, const char *filepath)
     {
       printf("%s: blkno %d, page header %x, calculated %x\n",
 	     filepath, blkno, phdr->pd_checksum, checksum);
-      return FALSE;
+      return false;
     }
 
-  return TRUE;
+  return true;
 }
 
 int
@@ -93,13 +93,13 @@ verify_segmentfile(const char *filepath)
   if (corrupted > 0)
     {
       printf("%d blocks corrupted in %s.\n", corrupted, filepath);
-      return FALSE;
+      return false;
     }
 
   if (verbose)
     printf("Verified %d blocks in %s.\n", blkno, filepath);
 
-  return TRUE;
+  return true;
 }
 
 int
